@@ -27,6 +27,7 @@ const Layout = ({children}) => {
           grid-area: main;
           background: linear-gradient(to top, #005c97, #363795);
           overflow-y: auto;
+          overflow-x: hidden;
           scroll-behavior: smooth;
         }
         .main::-webkit-scrollbar{
