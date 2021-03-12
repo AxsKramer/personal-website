@@ -1,5 +1,4 @@
-import React from 'react';
-// import logo from '../assets/images/laptop.jpg'
+import Link from 'next/link';
 
 const Project = ({project}) => {
   return ( 
@@ -8,15 +7,17 @@ const Project = ({project}) => {
         <p className='project__detail--name'>{project.name}</p>
         <p className='project__detail--description'>{project.description}</p>
         <p className='project__detail--area'>{project.type}</p>
-        <p className='project__detail--techs'>{project.techs}</p>
         <div className='icons'>
-          <a href={project.github} title='github'>
+          <a href={project.github} target="_blank" title='github'>
             <i className="fab fa-github"></i>
           </a>
-          <a href={project.website} title='website'>
+          <a href={project.website} target="_blank" title='website'>
             <i className="fas fa-code"></i>
           </a>
         </div>
+        <Link href={`/project/${project.id}`}>
+          <a className='link'>Read more about project</a>
+        </Link>
       </div>
 
       <style jsx>{`
@@ -25,7 +26,6 @@ const Project = ({project}) => {
           width: 100%;
           height: 300px;
           margin: 2rem 0;
-          
           overflow: hidden;
           position: relative;
           transition: all .5s;
@@ -79,6 +79,10 @@ const Project = ({project}) => {
           font-size: 3rem;
         }
 
+        .link{
+          margin-top: 2rem;
+        }
+
         @keyframes details{
           from{
             opacity: 0; 
@@ -95,26 +99,3 @@ const Project = ({project}) => {
 }
  
 export default Project;
-
-//     .icons{
-//       display: flex;
-//       justify-content: space-evenly;
-//       align-items: center;
-//       margin-top: 3rem;
-//       a{
-//         i{
-//           font-size: 3rem;
-//           color: #333333;
-//           &:hover{
-//             color: $primaryColor;
-//           }
-//         }
-        
-//         &:hover{
-//           animation: iconAnimation .8s linear infinite;
-//         }
-
-//       }
-//     }
-//   }
-// }

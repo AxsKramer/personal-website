@@ -5,35 +5,35 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="navbar__menu">
         <li>
-          <Link href="#home">
+          <Link href="/#home">
             <a className="navbar__menu--item">
               <i className="fab fa-react"></i> Home
             </a>
           </Link>
         </li>
         <li>
-          <Link href="#about">
+          <Link href="/#about">
             <a className="navbar__menu--item">
               <i className="fab fa-react"></i> About
             </a>
           </Link>
         </li>
         <li>
-          <Link href="#skills">
+          <Link href="/#skills">
             <a className="navbar__menu--item">
               <i className="fab fa-react"></i> Skills
             </a>
           </Link>
         </li>
         <li>
-          <Link href="#projects">
+          <Link href="/#projects">
             <a className="navbar__menu--item">
               <i className="fab fa-react"></i> Projects
             </a>
           </Link>
         </li>
         <li>
-          <Link href="#contact">
+          <Link href="/#contact">
             <a className="navbar__menu--item">
               <i className="fab fa-react"></i> Contact
             </a>

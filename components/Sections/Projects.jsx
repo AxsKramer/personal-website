@@ -1,12 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Project from '../Project';
 import Section from '../containers/Section/Section';
 
-import projects from '../../data/projects';
-
-const Projects = () => {
-
-  const [state] = useState(projects)
+const Projects = ({projects}) => {
 
   return ( 
     <Section id='projects' background='linear-gradient(to bottom, #000000, #434343)'>
@@ -14,7 +10,7 @@ const Projects = () => {
         <h3>PROJECTS</h3>
         <div className='projects'>
           {
-            state.map(project => <Project key={project.id} project={project} />)
+            projects.map(project => <Project key={project.id} project={project} />)
           }
         </div>
       </div>
