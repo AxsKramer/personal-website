@@ -5,12 +5,12 @@ import Section from '../containers/Section/Section';
 const Projects = ({projects}) => {
 
   return ( 
-    <Section id='projects' background='linear-gradient(to bottom, #000000, #434343)'>
+    <Section id='projects' background='yes'>
       <div className='projects'>
         <h3>PROJECTS</h3>
         <div className='projects'>
           {
-            projects.map(project => <Project key={project.id} project={project} />)
+            projects.map(project => <Project key={project._id} project={project} />)
           }
         </div>
       </div>

@@ -1,6 +1,5 @@
 const projects = [
   {
-    id: 1,
     name: "Wolves Army",
     type: "Frontend | SPA",
     description: 'Description',
@@ -10,17 +9,15 @@ const projects = [
     website: "link"
   },
   {
-    id: 2,
     name: "CMR",
     type: "Frontend | SPA | PWA | Backend | REST API ",
     description: 'Description',
-    deployed: 'AWS',
+    deployed: "AWS",
     techs: "MongoDB, Mongoose, Node.js, Express, JWT, React, CSS ",
     github: "https://github.com/AxsKramer/crm-frontend",
     website: "link"
   },
   {
-    id: 3,
     name: "Backpacking Adventure",
     type: "Backend | Server Side",
     description: 'Mexican travel agency, we travel to amazing places in the country and the world.',
@@ -30,7 +27,6 @@ const projects = [
     website: "https://backpacking-adventure.herokuapp.com/"
   },
   {
-    id: 4,
     name: "Portfolio",
     type: "Server Side Render | SPA",
     description: 'My portfolio built with Next.js',

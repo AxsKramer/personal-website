@@ -1,14 +1,27 @@
-import db from '../../../data/databse';
+import projectsDB from '../../../data/Controller/projectController';
 
-async function allProjects (req, res) {
-  try {
-    const projects = await db.getAllProjects();
-
-    res.status(200).json({data: projects, count: projects.length });
-
-  } catch (error) {
-    res.status(500).json({message: error.message});
+const handler = async (req, res) => {
+  if(req.method === 'GET'){
+    try {
+      const projects = await projectsDB.getAllProjects();
+  
+      return res.status(200).json({count: projects.length , data: projects, });
+  
+    } catch (error) {
+      return res.status(500).json({message: error.message});
+    }
+  }
+  if(req.method === 'POST'){
+    try {
+      const project = await projectsDB.createProject(req.body);
+  
+      return res.status(200).json({data: project});
+  
+    } catch (error) {
+      return res.status(500).json({message: error.message});
+    }
   }
 }
 
-export default allProjects;
+export default projectsDB.connectDB(handler);
+

@@ -52,6 +52,9 @@ const Navbar = () => {
           padding: 1rem 0;
           text-align: justify;
         }
+        .navbar__menu--item:hover {
+          font-weight: bold;
+        }
         .navbar__menu--item:hover .fa-react{
           opacity: 1;
         }

@@ -1,3 +1,4 @@
+import { white } from "colorette";
 import { useEffect } from "react";
 import Typed from 'typed.js';
 
@@ -8,8 +9,8 @@ const TypedWords = ({ strings }) => {
   useEffect(() => {
     const options = {
       strings: strings,
-      typeSpeed: 100,
-      backSpeed: 100,
+      typeSpeed: 50,
+      backSpeed: 50,
       loop: true,
       showCursor: true,
       cursorChar: '|',

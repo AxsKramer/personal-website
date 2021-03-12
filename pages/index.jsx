@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Head from 'next/head';
 import Layout from "../components/containers/Layout/Layout";
 import Hero from "../components/Sections/Hero";
@@ -8,18 +8,21 @@ import Projects from "../components/Sections/Projects";
 import Contact from "../components/Sections/Contact";
 import axios from "axios";
 
-const App = () => {
+export async function getStaticProps(context){
+  const {data: {data}} = await axios.get('http://localhost:3000/api/projects');
 
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    const projects = async () => {
-      const {data} = await axios.get('/api/projects');
-      setProjects(data.data);
+  if(!data){
+    return {
+      notFound: true
     }
-    projects();
-  },[]);
+  }
 
+  return {
+    props: {projects: data}
+  }
+}
+
+const App = ({projects}) => {
   return (
     <>
       <Layout>
