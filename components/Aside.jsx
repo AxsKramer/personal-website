@@ -1,5 +1,5 @@
-import React from 'react'
-import Navbar from './Navbar'
+import Image from 'next/image';
+import Navbar from './Navbar';
 import SocialNet from './Sections/SocialNet';
 import Login from '../components/Login';
 
@@ -7,7 +7,7 @@ const Aside = () => {
   return (
     <div className='aside'>
       <figure className='figure'>
-        <img src="" alt=""/>
+        <Image src="/images/me1.jpg" layout='fixed' width={150} height={150} alt="Me"/>
       </figure>
       <h3 className='name'>Alexis Dueñas Aviña</h3>
       <SocialNet small/>
@@ -28,10 +28,15 @@ const Aside = () => {
           border-radius: 50%;
           border: 2px solid white;
           background: rgba(0 , 0, 0, .5);
-          padding: .5rem;
           width:150px;
           height: 150px;
           box-shadow: 1px 1px 12px 1px white, -1px -1px 12px 1px white;
+          overflow: hidden;
+          transition: transform .5s;
+        }
+
+        .figure:hover{
+          transform: scale(1.5);
         }
 
         .name{

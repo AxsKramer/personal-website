@@ -15,8 +15,8 @@ const Project = ({project}) => {
             <i className="fas fa-code"></i>
           </a>
         </div>
-        <Link href={`/project/${project.id}`}>
-          <a className='link'>Read more about project</a>
+        <Link href={`/project/${project._id}`}>
+          <a className='link'>More about</a>
         </Link>
       </div>
 
@@ -29,7 +29,6 @@ const Project = ({project}) => {
           overflow: hidden;
           position: relative;
           transition: all .5s;
-
         }  
         .project:hover{
           box-shadow: 3px 3px 8px 2px #333, -3px -3px 8px 2px #333;
@@ -40,14 +39,14 @@ const Project = ({project}) => {
           top: 0;
           bottom: 0;
           width: 50%;
-          
           background: rgba(0,0,0,.8);
           color: white;
           padding: 0 1rem;
           margin: auto;
           display:none;
           flex-direction: column;
-          justify-content: center
+          justify-content: center;
+          animation: detailsout .6s linear;
         }
         .project:hover .project__details{
           display: flex;
@@ -56,15 +55,14 @@ const Project = ({project}) => {
         .project__details p{
           padding: .5rem 0;
         }
-        .project__detail--name, 
-        .project__detail--description{
+        .project__detail--name{
           font-weight: 700;
           font-size: 1.3rem;
         }
-        .project__detail--area{
+        .project__detail--area,
+        .project__detail--description{
           font-size: 1.2rem;
         }
-
         .icons{
           margin-top: 1rem;
         }
@@ -74,13 +72,17 @@ const Project = ({project}) => {
         a:hover{
           color: #2587ff;
         }
-
         i{
-          font-size: 3rem;
+          font-size: 2rem;
         }
-
         .link{
           margin-top: 2rem;
+          font-size: 1.2rem;
+          color: #004aa5;
+          display: inline-block;
+        }
+        .link:hover{
+          color: #2587ff;
         }
 
         @keyframes details{

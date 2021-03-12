@@ -1,14 +1,14 @@
-import db from '../../../data/databse';
+import projectsDB from '../../../data/Controller/projectController';
 
-async function projectById (req, res) {
-  try {
-    const project = await db.getProjectById(req.query.id)
-
-    res.status(200).json({data: project });
-
-  } catch (error) {
-    res.status(500).json({message: error.message});
+const handler = async (req, res) => {
+  if(req.method === 'GET'){
+    try {
+      const project = await projectsDB.getProjectById(req.query.id)
+      return res.status(200).json({data: project });
+    } catch (error) {
+      return res.status(500).json({message: error.message});
+    }
   }
 }
 
-export default projectById;
+export default projectsDB.connectDB(handler);
