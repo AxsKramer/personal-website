@@ -1,6 +1,5 @@
 import React from 'react';
 import Section from '../../components/containers/Section/Section';
-// import me from '../../assets/images/me4.jpg';
 import Button from '../Button';
 import TypedWords from '../Typed';
 
@@ -23,9 +22,10 @@ const Hero = () => {
       <style jsx>{`
         .hero{
           position: relative;
-          top: 5%;
+          top: 2rem;
           width: 100%;
-          height:100%;
+          height: calc(100vh - 2rem);
+          max-height: max-content;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -45,6 +45,19 @@ const Hero = () => {
           animation-timing-function: linear;
           animation-iteration-count: infinite;
           text-shadow: 1px 1px 5px #2587ff;
+        }
+
+        @media screen and (max-width: 820px) and (min-width: 500px) and (orientation: landscape) {
+          h1, h2{
+            font-size: 2.8rem;
+            margin: .4rem 0;
+          }
+          .fa-react{
+            font-size: 3rem;
+          }
+          .hero{
+            top: 0rem;
+          }
         }
 
         @media (max-width: 500px){

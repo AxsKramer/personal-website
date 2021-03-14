@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Layout from "../../components/containers/Layout/Layout";
+import Image from 'next/image';
 
 const project = () => {
 
@@ -37,7 +38,7 @@ const project = () => {
 
       <div className="project">
         <div className='project-image'>
-
+          <Image src='/images/phone_portfolio.png' width={250} height={450} layout={"fixed"} />
         </div>
         <div className="project__details">
           <p className="project__detail">
@@ -48,6 +49,9 @@ const project = () => {
           </p>
           <p className="project__detail">
             Project built for: <span> {project.type}</span>
+          </p>
+          <p className="project__detail">
+            Deployed: <span> {project.deployed}</span>
           </p>
           <p className="project__detail">
             Technologies used: <span> {project.techs}</span>
@@ -97,29 +101,21 @@ const project = () => {
           }
           .project {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, #005c97, #363795);
+            justify-content: center;
+            align-items: center;
           }
-          .project-image{
-            width: 80%;
-            height: 50%;
-            border: 2px solid black;
-            background: whitesmoke;
-          }
-
           .project__details {
-            width: 80%;
-            height: 50%;
             background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 0 25% 0 25%;
+            padding: 1rem;
             display: flex;
+            height: 450px;
+            max-height: fit-content;
             flex-direction: column;
             justify-content: center;
-            
           }
           .project__detail {
             padding: 1rem 0;
@@ -144,6 +140,12 @@ const project = () => {
           }
           .icon_link a i{
            font-size: 3rem;
+          }
+          @media screen and (max-width: 700px){
+            .project-image,
+            .project__details {
+              width: 95%
+            }
           }
         `}
       </style>

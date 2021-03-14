@@ -6,11 +6,11 @@ const FormButton = () => {
       Submit
       <style jsx>{`
         .button {
-          margin: 1rem 0;
+          margin: .5rem 0;
           width: 100%;
           font-size: 1.5rem;
           text-align: center;
-          padding: 1rem 0;
+          padding: .8rem 0;
           color: white;
           transition: all 0.5s;
           cursor: pointer;

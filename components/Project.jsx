@@ -29,6 +29,10 @@ const Project = ({project}) => {
           overflow: hidden;
           position: relative;
           transition: all .5s;
+          background-image: url("/images/${project.image}");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: top center;
         }  
         .project:hover{
           box-shadow: 3px 3px 8px 2px #333, -3px -3px 8px 2px #333;

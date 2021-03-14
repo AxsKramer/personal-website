@@ -52,6 +52,12 @@ const TypedWords = ({ strings }) => {
           animation: typedjsBlink 0.7s infinite;
         }
 
+        @media screen and (max-width: 699px) and (min-width: 500px) and (orientation: landscape) {
+          .subtitle{
+            font-size: 2rem;
+          }
+        }
+
         @media (max-width: 500px){
           .subtitle{
             letter-spacing: .2rem;

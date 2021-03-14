@@ -7,6 +7,11 @@ const projectSchema = new mongoose.Schema({
     trim: true,
     uppercase: true
   },
+  image:{
+    type: String,
+    required: true,
+    trim: true
+  },
   type: {
     type: String,
     required: true,

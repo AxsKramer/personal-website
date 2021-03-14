@@ -56,12 +56,9 @@ const Login = () => {
           padding: .5rem 0 .5rem .5rem;
           margin: .2rem 0;
         }
-        input::placeholder{
-          
-        }
         .submit{
           width: 100%;
-          margin: 1rem 0
+          margin: 1rem 0 .5rem 0;
         }
         .login__btn{
           outline: none;
