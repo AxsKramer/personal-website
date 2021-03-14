@@ -49,7 +49,7 @@ const Navbar = () => {
         .navbar__menu li {
           margin: 0 auto;
           width: 50%;
-          padding: 1rem 0;
+          padding: 2rem 0;
           text-align: justify;
         }
         .navbar__menu--item:hover {
@@ -64,12 +64,13 @@ const Navbar = () => {
           opacity: 0;
         }
 
-        @media only screen and (max-width: 700px){
+        @media screen and (max-width: 700px){
           .navbar__menu li{
             text-align: center;
           }
           .navbar__menu li a{
-            font-size: 2rem;
+            font-size: 1.6rem;
+            font-weight: bold;
           }
         }
       `}</style>

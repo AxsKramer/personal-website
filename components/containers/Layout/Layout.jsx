@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {useRouter} from 'next/router';
 import Footer from '../../Footer';
 import Aside from '../../Aside';
 
 const Layout = ({children}) => {
+  const [isClose, setClose] = useState(true);
+  const router = useRouter();
+  
+  useEffect(() => {
+    setClose(!isClose);
+  },[router.asPath])
+
   return (
     <div className='layout'>
-      <Aside />
+      <i 
+        className={`fas fa-chevron-down icon ${isClose ? "close": "open"}`} 
+        onClick={() => setClose(!isClose)}
+      ></i>
+      <Aside isClose={isClose}/>
       <main className='main'>
         {children}
       </main>
@@ -29,6 +41,25 @@ const Layout = ({children}) => {
           overflow-y: auto;
           overflow-x: hidden;
           scroll-behavior: smooth;
+        }
+        .layout .icon{
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          color: #363795;
+          background: white;
+          border-radius: 50%;
+          padding: .1rem .5rem;
+          z-index: 10;
+          font-size: 3rem;
+          display: none;
+        }
+
+        .icon.close{
+          animation: openIcon .5s ease forwards;
+        }
+        .icon.open{
+          animation: closeIcon .5s ease forwards;
         }
         .main::-webkit-scrollbar{
           width: 1rem;
@@ -54,6 +85,27 @@ const Layout = ({children}) => {
             overflow-y: auto;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            position: relative;
+          }
+          .layout .icon{
+            display: flex;
+          }
+        }
+
+        @keyframes closeIcon{
+          to{
+            transform: rotate(0deg);
+          }
+          from{
+            transform: rotate(180deg);
+          }
+        }
+        @keyframes openIcon{
+          to{
+            transform: rotate(180deg);
+          }
+          from{
+            transform: rotate(0deg);
           }
         }
       `}</style>

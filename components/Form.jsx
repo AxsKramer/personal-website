@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import FormButton from "./FormButton";
+import axios from 'axios';
+import Spinner from '../components/Spinner';
 
 const Form = () => {
 
@@ -8,7 +10,7 @@ const Form = () => {
     email: '',
     message: ''
   }
-
+  const [spinner, setSpinner] = useState(false); 
   const [state, setState] = useState(initialState);
   const [success, setSuccess] = useState({
     ok: false,
@@ -43,15 +45,28 @@ const Form = () => {
       setError({errorMessage: '* Message is required'});
       return;
     }
+    setSpinner(true);
 
-    setTimeout(() => {
-      setState(initialState);
-      setSuccess({...success, ok: true })
-    },3000)
+    axios.post('http://localhost:3000/api/messages', state)
+      .then(() => {
+        setTimeout(() => {
+          setState(initialState);
+          setSuccess({...success, ok: true });
+          setSpinner(false);
+        },3000)
+      }).catch(error => {
+        setSuccess({message: error.message, ok: true });
+      });
   }
 
   return (
     <form className="form" onSubmit={handleSubmit}>
+       {
+        spinner ? <Spinner /> : null
+      }
+      {
+        success.ok && <p className='success__message'>{success.message}</p>
+      }
       <div className="form__input">
         <label htmlFor="name">Name: *</label>
         <input type="text" placeholder="Your name" name="name" id="name" onChange={handleChange} value={state.name} />
@@ -82,9 +97,6 @@ const Form = () => {
         }
       </div>
       <FormButton />
-      {
-        success.ok && <p className='success__message'>{success.message}</p>
-      }
 
       <style jsx>{`
         .form{
@@ -132,7 +144,7 @@ const Form = () => {
         .success__message{
           background: rgba(0,195,0,0.7);
           text-align: center;
-          color: #333;
+          color: whitesmoke;
           font-weight: bold;
           padding: 1rem 0;
           font-size: 1.3rem;
