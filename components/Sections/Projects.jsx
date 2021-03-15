@@ -1,6 +1,7 @@
 import React from 'react'
 import Project from '../Project';
 import Section from '../containers/Section/Section';
+import Spinner from '../Spinner';
 
 const Projects = ({projects}) => {
 
@@ -10,7 +11,9 @@ const Projects = ({projects}) => {
         <h3>PROJECTS</h3>
         <div className='projects'>
           {
-            projects.map(project => <Project key={project._id} project={project} />)
+            projects 
+            ? projects.map(project => <Project key={project._id} project={project} />)
+            : <Spinner />
           }
         </div>
       </div>

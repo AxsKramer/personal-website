@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import axios from "axios";
+import Spinner from '../../components/Spinner';
 
 export async function getServierSideProps(context) {
   const {
@@ -35,14 +36,14 @@ const Messages = ({ messages }) => {
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
       </Head>
       <div className="messages__container">
-        {messages.map((message) => (
+        {messages ? messages.map((message) => (
           <div className="card" key={message._id}>
             <h4 className="card__name">{message.name}</h4>
             <em className="card__email">{message.email}</em>
             <p className="card__message">{message.message}</p>
             <small>{formDate(message.createdAt)}</small>
           </div>
-        ))}
+        )): <Spinner />}
 
         <style global jsx>
           {`
