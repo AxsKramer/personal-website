@@ -2,10 +2,9 @@ import React from "react";
 import Head from "next/head";
 import axios from "axios";
 
-export async function getStaticProps(context) {
+export async function getServierSideProps(context) {
   const {
-    data: { data },
-  } = await axios.get("http://localhost:3000/api/messages");
+    data: { data }} = await axios.get("http://localhost:3000/api/messages");
   if (!data) {
     return {
       notFound: true,
