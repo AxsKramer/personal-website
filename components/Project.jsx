@@ -6,7 +6,6 @@ const Project = ({project}) => {
       <div className='project__details'>
         <p className='project__detail--name'>{project.name}</p>
         <p className='project__detail--description'>{project.description}</p>
-        <p className='project__detail--area'>{project.type}</p>
         <div className='icons'>
           <a href={project.github} target="_blank" title='github'>
             <i className="fab fa-github"></i>

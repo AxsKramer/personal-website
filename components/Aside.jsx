@@ -7,7 +7,7 @@ const Aside = ({isClose}) => {
   return (
     <div className={`aside ${isClose ? "close": "open"}`}>
       <figure className='figure'>
-        <Image src="/images/me1.jpg" layout='fixed' width={150} height={150} alt="Me"/>
+        <Image src="/images/me1.png" layout='fixed' width={150} height={150} alt="Me"/>
       </figure>
       <h3 className='name'>Alexis Dueñas Aviña</h3>
       <div className='location'>

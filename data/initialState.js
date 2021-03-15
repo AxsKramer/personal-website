@@ -3,7 +3,7 @@ const initialState = [
   {
     id: 1, 
     type: "Frontend", 
-    techs: ["HTML", "CSS", "SASS", "Bootstrap", "Javascript", "Typescript", "React", "Redux"]
+    techs: ["HTML", "CSS", "SASS", "Bootstrap", "Javascript", "Jest", "React", "Redux"]
   }, 
   {
     id: 2, 

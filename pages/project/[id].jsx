@@ -15,9 +15,9 @@ const project = () => {
       const {data: {data: project}} = await axios.get(`/api/projects/${router.query.id}`);
       setProject(project);
     }
-
     getProject()
   },[router.query.id]);
+
 
   return (
     <Layout>
@@ -38,7 +38,7 @@ const project = () => {
 
       <div className="project">
         <div className='project-image'>
-          <Image src='/images/phone_portfolio.png' width={250} height={450} layout={"fixed"} />
+          <Image src={`/images/phone_${project.image}`} width={250} height={450} layout={"fixed"} />
         </div>
         <div className="project__details">
           <p className="project__detail">
@@ -103,9 +103,10 @@ const project = () => {
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-            height: 100%;
-            justify-content: center;
+            height: 100vh;
+            justify-content: space-around;
             align-items: center;
+            text-align: center;
           }
           .project__details {
             background: rgba(0, 0, 0, 0.8);
@@ -116,6 +117,7 @@ const project = () => {
             max-height: fit-content;
             flex-direction: column;
             justify-content: center;
+            text-align: start;
           }
           .project__detail {
             padding: 1rem 0;
