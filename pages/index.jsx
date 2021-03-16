@@ -8,8 +8,8 @@ import Projects from "../components/Sections/Projects";
 import Contact from "../components/Sections/Contact";
 import axios from "axios";
 
-export async function getServierSideProps(context){
-  const {data: {data}} = await axios.get('http://localhost:3000/api/projects');
+export async function getServerSideProps(context){
+  const {data: {data}} = await axios.get('https://axs-react-dev.vercel.app/api/projects');
 
   if(!data){
     return {

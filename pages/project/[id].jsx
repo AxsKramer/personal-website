@@ -12,7 +12,7 @@ const project = () => {
 
   useEffect(() => {
     const getProject = async () => {
-      const {data: {data: project}} = await axios.get(`/api/projects/${router.query.id}`);
+      const {data: {data: project}} = await axios.get(`https://axs-react-dev.vercel.app/api/projects/${router.query.id}`);
       setProject(project);
     }
     getProject()

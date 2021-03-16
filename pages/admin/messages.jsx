@@ -3,9 +3,9 @@ import Head from "next/head";
 import axios from "axios";
 import Spinner from '../../components/Spinner';
 
-export async function getServierSideProps(context) {
+export async function getServerSideProps(context) {
   const {
-    data: { data }} = await axios.get("http://localhost:3000/api/messages");
+    data: { data }} = await axios.get("https://axs-react-dev.vercel.app/api/messages");
   if (!data) {
     return {
       notFound: true,
