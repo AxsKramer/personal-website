@@ -85,10 +85,10 @@ const Aside = ({isClose}) => {
             bottom: 0;
           }
           .aside.open{
-            animation: asideResponsiveOpen 1s .5s ease-in forwards;
+            animation: asideResponsiveClose .5s ease forwards;
           }
           .aside.close{
-            animation: asideResponsiveClose 1s ease forwards;
+            animation: asideResponsiveOpen 1s .4s ease-in forwards;
           }
           .figure{
             width: 120px;

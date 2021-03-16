@@ -37,24 +37,21 @@ const project = () => {
       </Head>
 
       <div className="project">
-        <div className='project-image'>
-          <Image src={`/images/phone_${project.image}`} width={250} height={450} layout={"fixed"} />
-        </div>
         <div className="project__details">
           <p className="project__detail">
-            Project name: <span> {project.name}</span>
+            Project name:   <span> {project.name}</span>
           </p>
           <p className="project__detail"> 
-            Project description: <span> {project.description}</span>
+            Project description:   <span> {project.description}</span>
           </p>
           <p className="project__detail">
-            Project built for: <span> {project.type}</span>
+            Project built for:   <span> {project.type}</span>
           </p>
           <p className="project__detail">
-            Deployed: <span> {project.deployed}</span>
+            Deployed:   <span> {project.deployed}</span>
           </p>
           <p className="project__detail">
-            Technologies used: <span> {project.techs}</span>
+            Technologies used:   <span> {project.techs}</span>
           </p>
           <div className="icon_link">
             <a href={project.github} target="_blank" title="github">
@@ -64,6 +61,9 @@ const project = () => {
               <i className="fas fa-code"></i>
             </a>
           </div>
+        </div>
+        <div className='project__image'>
+          <Image src={`/images/phone_${project.image}`} width={250} height={450} layout={"fixed"} />
         </div>
       </div>
 
@@ -104,20 +104,20 @@ const project = () => {
             flex-wrap: wrap;
             width: 100%;
             height: 100vh;
-            justify-content: space-around;
+            max-height: fit-content;
+            justify-content: space-evenly;
             align-items: center;
-            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2rem 0;
           }
           .project__details {
-            background: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 1rem;
+            padding: 2rem 1rem;
             display: flex;
-            height: 450px;
             max-height: fit-content;
             flex-direction: column;
-            justify-content: center;
-            text-align: start;
+            text-align: justify;
+            width: 320px;
           }
           .project__detail {
             padding: 1rem 0;
@@ -129,7 +129,11 @@ const project = () => {
             font-weight: normal;
             font-size: 1.2rem;
             color: white;
+            padding-left: 1rem;
           } 
+          .project__image{
+            text-align: center;
+          }
           .icon_link{
             margin-top: 1rem;
           }
@@ -147,6 +151,9 @@ const project = () => {
             .project-image,
             .project__details {
               width: 95%
+            }
+            .project {
+              height: fit-content;
             }
           }
         `}

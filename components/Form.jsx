@@ -47,7 +47,7 @@ const Form = () => {
     }
     setSpinner(true);
 
-    axios.post('http://localhost:3000/api/messages', state)
+    axios.post('https://axs-react-dev.vercel.app/api/messages', state)
       .then(() => {
         setTimeout(() => {
           setState(initialState);

@@ -7,8 +7,8 @@ const Layout = ({children}) => {
   const [isClose, setClose] = useState(true);
   const router = useRouter();
   
-  useEffect(() => {
-    setClose(!isClose);
+  useEffect(() => {   
+    setClose(true) 
   },[router.asPath])
 
   return (
@@ -56,10 +56,10 @@ const Layout = ({children}) => {
         }
 
         .icon.close{
-          animation: openIcon .5s ease forwards;
+          animation: closeIcon .5s ease forwards;
         }
         .icon.open{
-          animation: closeIcon .5s ease forwards;
+          animation: openIcon .5s ease forwards;
         }
         .main::-webkit-scrollbar{
           width: 1rem;
