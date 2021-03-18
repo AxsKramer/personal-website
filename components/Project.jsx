@@ -7,10 +7,10 @@ const Project = ({project}) => {
         <p className='project__detail--name'>{project.name}</p>
         <p className='project__detail--description'>{project.description}</p>
         <div className='icons'>
-          <a href={project.github} target="_blank" title='github'>
+          <a href={project.github} target="_blank" rel="noreferrer" rel="noopener" title='github'>
             <i className="fab fa-github"></i>
           </a>
-          <a href={project.website} target="_blank" title='website'>
+          <a href={project.website} target="_blank" rel="noreferrer" rel="noopener" title='website'>
             <i className="fas fa-code"></i>
           </a>
         </div>

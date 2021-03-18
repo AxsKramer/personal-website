@@ -1,7 +1,10 @@
-import React from 'react'
-import Project from '../Project';
+import loadable from '@loadable/component';
 import Section from '../containers/Section/Section';
 import Spinner from '../Spinner';
+
+const Project = loadable(() => import('../Project'), {
+  fallback: <Spinner />
+});
 
 const Projects = ({projects}) => {
 

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import axios from "axios";
+import {get} from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Layout from "../../components/containers/Layout/Layout";
@@ -12,7 +12,7 @@ const project = () => {
 
   useEffect(() => {
     const getProject = async () => {
-      const {data: {data: project}} = await axios.get(`https://axs-react-dev.vercel.app/api/projects/${router.query.id}`);
+      const {data: {data: project}} = await get(`https://axs-react-dev.vercel.app/api/projects/${router.query.id}`);
       setProject(project);
     }
     getProject()
@@ -43,10 +43,10 @@ const project = () => {
             Technologies used:   <span> {project.techs}</span>
           </p>
           <div className="icon_link">
-            <a href={project.github} target="_blank" title="github">
+            <a href={project.github} rel="noreferrer" rel="noopener" target="_blank" title="github">
               <i className="fab fa-github"></i>
             </a>
-            <a href={project.website} target="_blank" title="website">
+            <a href={project.website} rel="noreferrer" rel="noopener" target="_blank" title="website">
               <i className="fas fa-code"></i>
             </a>
           </div>

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import FormButton from "./FormButton";
-import axios from 'axios';
 import Spinner from '../components/Spinner';
+import {post} from 'axios';
 
 const Form = () => {
 
@@ -47,7 +47,7 @@ const Form = () => {
     }
     setSpinner(true);
 
-    axios.post('https://axs-react-dev.vercel.app/api/messages', state)
+    post('https://axs-react-dev.vercel.app/api/messages', state)
       .then(() => {
         setTimeout(() => {
           setState(initialState);

@@ -13,6 +13,7 @@ const Contact = () => {
           <Form />
         </div>
       </div>
+      
       <style jsx>{`
         .contact{
           width: 80%;

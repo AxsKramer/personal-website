@@ -6,7 +6,7 @@ import Hero from "../components/Sections/Hero";
 import About from "../components/Sections/About";
 import Skills from "../components/Sections/Skills";
 import Contact from "../components/Sections/Contact";
-import axios from "axios";
+import {get} from "axios";
 import Spinner from '../components/Spinner';
 
 const Projects = loadable(() => import('../components/Sections/Projects'), {
@@ -17,7 +17,7 @@ const Projects = loadable(() => import('../components/Sections/Projects'), {
 export async function getServerSideProps(context) {
   const {
     data: { data },
-  } = await axios.get("https://axs-react-dev.vercel.app/api/projects");
+  } = await get("https://axs-react-dev.vercel.app/api/projects");
 
   if (!data) {
     return {

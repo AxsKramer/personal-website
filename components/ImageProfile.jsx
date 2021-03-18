@@ -1,4 +1,10 @@
-import Image from "next/image";
+// import Image from "next/image";
+import loadable from '@loadable/component';
+import Spinner from './Spinner';
+
+const Image = loadable(() => import("next/image"), {
+  fallback: <Spinner />
+});
 
 const ProfilePicture = () => (
   <figure className="figure">
