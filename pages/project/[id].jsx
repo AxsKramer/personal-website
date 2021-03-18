@@ -1,9 +1,9 @@
+import Head from 'next/head';
 import axios from "axios";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Layout from "../../components/containers/Layout/Layout";
-import Image from 'next/image';
+import ImagePhone from '../../components/ImagePhone';
 
 const project = () => {
 
@@ -20,22 +20,11 @@ const project = () => {
 
 
   return (
+    <>
+    <Head>
+      <title>{project.name}</title>
+    </Head>
     <Layout>
-      <Head>
-        <title>Project {project.name}</title>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Head>
-
       <div className="project">
         <div className="project__details">
           <p className="project__detail">
@@ -62,9 +51,7 @@ const project = () => {
             </a>
           </div>
         </div>
-        <div className='project__image'>
-          <Image src={`/images/phone_${project.image}`} width={250} height={450} layout={"fixed"} />
-        </div>
+        <ImagePhone image={`/images/phone_${project.image}`} />
       </div>
 
       <style global jsx>
@@ -159,6 +146,7 @@ const project = () => {
         `}
       </style>
     </Layout>
+    </>
   );
 };
 

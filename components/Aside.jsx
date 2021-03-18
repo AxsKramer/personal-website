@@ -1,19 +1,19 @@
-import Image from 'next/image';
+import loadable from '@loadable/component';
 import Navbar from './Navbar';
 import SocialNet from './Sections/SocialNet';
 import Login from '../components/Login';
+import DetailsUser from './DetailsUser';
+import Spinner from './Spinner';
+
+const ProfilePicture = loadable(() => import('./ImageProfile'), {
+  fallback: <Spinner />
+});
 
 const Aside = ({isClose}) => {
   return (
     <div className={`aside ${isClose ? "close": "open"}`}>
-      <figure className='figure'>
-        <Image src="/images/me1.png" layout='fixed' width={150} height={150} alt="Me"/>
-      </figure>
-      <h3 className='name'>Alexis Dueñas Aviña</h3>
-      <div className='location'>
-        <i className="fas fa-map-marker-alt"></i>
-        <span>Guadalajara, Jalisco, México</span>
-      </div>
+      <ProfilePicture />
+      <DetailsUser />
       <SocialNet small/>
       <Navbar />
       <Login />
@@ -37,42 +37,6 @@ const Aside = ({isClose}) => {
           border-radius: 7px;
         }
 
-        .figure{
-          border-radius: 50%;
-          border: 2px solid white;
-          background: rgba(0 , 0, 0, .5);
-          min-height: 150px;
-          min-width: 150px;
-          width:150px;
-          height: 150px;
-          box-shadow: 1px 1px 12px 1px white, -1px -1px 12px 1px white;
-          overflow: hidden;
-          transition: transform .5s;
-        }
-
-        .figure:hover{
-          transform: scale(1.3);
-        }
-
-        .name{
-          color: white;
-          margin: 0;
-          font-size: 1.5rem;
-        }
-
-        .network{
-          color: white;
-        }
-
-        .location{
-          color: white;
-          padding-bottom: 2rem;
-        }
-        .location i{
-          margin-right: 1rem;
-          font-size: 1.5rem;
-        }
-
         @media screen and (max-width: 700px){
           .aside{
             grid-area: none;
@@ -89,12 +53,6 @@ const Aside = ({isClose}) => {
           }
           .aside.close{
             animation: asideResponsiveOpen 1s .4s ease-in forwards;
-          }
-          .figure{
-            width: 120px;
-            height: 120px;
-            min-height: 120px;
-            min-width: 120px;
           }
         }
 

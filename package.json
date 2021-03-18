@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/AxsKramer/portfolio#readme",
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "axios": "^0.21.1",
     "mongoose": "^5.11.15",
     "next": "^10.0.8",

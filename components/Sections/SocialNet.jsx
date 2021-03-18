@@ -6,10 +6,10 @@ const SocialNet = ({small}) => {
   return ( 
     <div className='icons'>
       <Link href="mailto:kramer.axs1@gmail.com">
-        <a  title='Email' ><i className="far fa-envelope icon"></i></a>
+        <a  title='Email' rel="noopener" ><i className="far fa-envelope icon"></i></a>
       </Link>
-        <a href="https://github.com/AxsKramer" title='Github' target="_blank"><i className="fab fa-github icon" ></i></a>
-        <a href="https://www.linkedin.com/in/alexis-due%C3%B1as-488976203/" title='Linkedin' target="_blank"><i className="fab fa-linkedin icon"></i></a>
+        <a href="https://github.com/AxsKramer" rel="noopener" title='Github' target="_blank"><i className="fab fa-github icon" ></i></a>
+        <a href="https://www.linkedin.com/in/alexis-due%C3%B1as-488976203/" rel="noopener" title='Linkedin' target="_blank"><i className="fab fa-linkedin icon"></i></a>
       {/* <a href="#" title='platzi profile'><img className='platzi-logo' src={platzi} alt="logo platzi"/></a> */}
       
       <style jsx>{`
