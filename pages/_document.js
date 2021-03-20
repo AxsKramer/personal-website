@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import image from '../public/images/portfolio.png';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -41,7 +40,7 @@ class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content={image}
+            content='/images/portfolio.png'
           />
           <meta property="fb:app_id" content="ID_APP_FACEBOOK" />
         </Head>
