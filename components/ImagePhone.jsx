@@ -9,7 +9,7 @@ const ImagePhone = ({image}) => {
   return (
     <div className="project__image">
       <PhoneImage
-        src={`/images/phone_${image}`}
+        src={image}
         width={250}
         height={450}
         layout={"fixed"}
