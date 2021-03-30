@@ -22,7 +22,7 @@ const project = () => {
   return (
     <>
     <Head>
-      <title>{project.name}</title>
+      <title>Project {project.name}</title>
     </Head>
     <Layout>
       <div className="project">
@@ -51,7 +51,7 @@ const project = () => {
             </a>
           </div>
         </div>
-        <ImagePhone image={`/images/phone_${project.image}`} />
+        <ImagePhone image={`/images/phone_${project.image}`}  className='image-project'/>
       </div>
 
       <style global jsx>
@@ -97,6 +97,10 @@ const project = () => {
             background: rgba(0, 0, 0, 0.8);
             padding: 2rem 0;
           }
+          .project__image div img{
+            opacity: 0;
+            animation: scaleImage 1s 1s ease forwards;
+          }
           .project__details {
             color: white;
             padding: 2rem 1rem;
@@ -141,6 +145,17 @@ const project = () => {
             }
             .project {
               height: fit-content;
+            }
+          }
+
+          @keyframes scaleImage {
+            0%{
+              opacity: 0;
+              transform: scale(0);
+            }
+            100%{
+              opacity: 1;
+              transform: scale(1);
             }
           }
         `}

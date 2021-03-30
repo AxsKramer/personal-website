@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-// import platzi from '../../public/images/platzi.svg';
-
 const SocialNet = ({small}) => {
   return ( 
     <div className='icons'>
@@ -10,8 +8,7 @@ const SocialNet = ({small}) => {
       </Link>
         <a href="https://github.com/AxsKramer" rel="noopener" rel="noreferrer" title='Github' target="_blank"><i className="fab fa-github icon" ></i></a>
         <a href="https://www.linkedin.com/in/alexis-due%C3%B1as-488976203/" rel="noreferrer" rel="noopener" title='Linkedin' target="_blank"><i className="fab fa-linkedin icon"></i></a>
-      {/* <a href="#" title='platzi profile'><img className='platzi-logo' src={platzi} alt="logo platzi"/></a> */}
-      
+        <a href="/pdf/CV.pdf" title='Download CV' download="CV Alexis Dueñas" className='icon'>CV</a>
       <style jsx>{`
         .icons{
           text-align: center;

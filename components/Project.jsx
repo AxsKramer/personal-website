@@ -81,11 +81,11 @@ const Project = ({project}) => {
         .link{
           margin-top: 2rem;
           font-size: 1.2rem;
-          color: #004aa5;
+          color: #2587ff;
           display: inline-block;
         }
         .link:hover{
-          color: #2587ff;
+          filter: brightness(130%);
         }
 
         @keyframes details{

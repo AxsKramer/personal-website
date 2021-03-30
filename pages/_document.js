@@ -23,8 +23,10 @@ class MyDocument extends Document {
           ></link>
           <meta
             name="description"
-            content="Alexis Dueñas Aviña porfolio, React Developer, discover what my skills and knowledge are to be able to work together and create something new."
+            content="React Developer Alexis Dueñas Aviña, know my projects and my skills and let's start to work together to create something new."
           />
+          <meta name='keywords' content='react, developer, portfolio, web, Alexis' />
+          <meat name='author' content='Alexis Dueñas Aviña' />
           <link rel="canonical" href="https://axs-react-dev.vercel.app/" />
           <meta
             property="og:url"

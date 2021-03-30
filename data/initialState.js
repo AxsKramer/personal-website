@@ -13,7 +13,7 @@ const initialState = [
   {
     id: 3, 
     type: "Tools", 
-    techs: ["Git", "GitHub", 'Postman', 'VSCode', "Webpack"]
+    techs: ["Git", "GitHub", 'Postman', 'VSCode', "Webpack", "NPM"]
   }, 
   
 ]

@@ -4,7 +4,7 @@ const DetailsUser = () => {
       <h3 className="name">Alexis Dueñas Aviña</h3>
       <div className="location">
         <i className="fas fa-map-marker-alt"></i>
-        <span>Guadalajara, Jalisco, México</span>
+        <span>Guadalajara, Jalisco, Mexico</span>
       </div>
       
       <style jsx>{`
