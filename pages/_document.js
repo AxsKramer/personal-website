@@ -10,23 +10,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-            crossOrigin="anonymous"
-          />
-          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-            rel="stylesheet"
-          ></link>
-          <meta
-            name="description"
-            content="React Developer Alexis Dueñas Aviña, know my projects and my skills and let's start to work together to create something new."
-          />
-          <meta name='keywords' content='react, developer, portfolio, web, Alexis' />
-          <meat name='author' content='Alexis Dueñas Aviña' />
+          <meta name="description" content="React Developer Alexis Dueñas Aviña, know my projects and my skills and let´s start to work together to create something new" />
+          <meta name="keywords" content="React dev, portfolio, Web dev, developer, jr, Alexis" />
+          <meta name="author" content="Alexis Dueñas Aviña" />
           <link rel="canonical" href="https://axs-react-dev.vercel.app/" />
           <meta
             property="og:url"
@@ -45,6 +31,18 @@ class MyDocument extends Document {
             content='/images/portfolio.png'
           />
           <meta property="fb:app_id" content="ID_APP_FACEBOOK" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossOrigin="anonymous"
+          />
+          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+            rel="stylesheet"
+          ></link>
+          
         </Head>
         <body>
           <Main />

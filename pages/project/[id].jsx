@@ -22,7 +22,7 @@ const project = () => {
   return (
     <>
     <Head>
-      <title>Project {project.name}</title>
+      <title>{project.name}</title>
     </Head>
     <Layout>
       <div className="project">
