@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": "/index.html",
+  "start_url": "/",
   "description": "Alexis Dueñas Porfolio built with Next.js",
   "splash_pages": null,
   "prefer_related_applications": false,
