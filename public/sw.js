@@ -26,9 +26,8 @@ async function precache(){
 
 function fetchServiceWorker(event){
   const request = event.request;
-  if(request.method !== 'GET'){
-    return;
-  }
+  if(request.method !== 'GET') return;
+  
   //Search in cache
   event.respondWith(cachedResponse(request));
   //Update cache
