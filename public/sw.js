@@ -19,7 +19,7 @@ async function precache(){
   const cache = await caches.open(CACHE_NAME);
   return cache.addAll([
     "/",
-    "index.html",
+    "/index",
     "/pdf/CV.pdf"
   ]);
 }
