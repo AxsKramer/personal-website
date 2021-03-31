@@ -23,6 +23,8 @@ class MyDocument extends Document {
           <meta property="og:image" content='/images/portfolio.png' />
           <meta property="fb:app_id" content="ID_APP_FACEBOOK" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2587ff" />
           <meta name="msapplication-TileColor" content="#2b5797" />
           <meta name="theme-color" content="#2587ff" />

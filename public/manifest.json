@@ -1,17 +1,18 @@
 {
+  "name": "Alexis React Dev",
   "short_name": "Portfolio PWA",
-  "name": "Alexis React Dev.",
-  "orientation": "portrait",
-  "scope": "/",
-  "start_url": "/",
   "background_color": "#2587ff",
   "theme_color": "#2587ff",
   "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
   "description": "Alexis Dueñas Porfolio built with Next.js",
+  "splash_pages": null,
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "64x64 24x24",
+      "sizes": "64x64",
       "type": "image/x-icon"
     },
     {
