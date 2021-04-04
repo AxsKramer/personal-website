@@ -1,20 +1,42 @@
 import {useState} from 'react'
 import FormButton from './FormButton';
+import {useRouter} from "next/router";
 
 const Login = () => {
 
   const initialState = {
     user: '',
-    password: ''
+    password: '',
+    error: {}
   }
   const [showForm,  setshowForm] = useState(false);
   const [formState, setFormState ] = useState(initialState);
+  const router = useRouter();
 
   const handleChange = (e) => setFormState({...formState, [e.target.name]: e.target.value});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(formState.user ==='' || formState.password === ''){
+    setFormState({...formState, error: {}})
+    if(formState.user.trim() === '' && formState.password.trim() === ''){
+      setFormState({...formState, error: {user: true, password: true}});
+      return;
+    }
+    if(formState.user.trim() === ''){
+      setFormState({...formState, error: {user: true, password: false}  });
+      return;
+    }
+    if(formState.password.trim() === ''){
+      setFormState({...formState, error: {user: false, password: true}});
+      return;
+    }
+    if(Object.values(formState.error).length > 0){
+      return;
+    }
+    if(process.env.user === formState.user && process.env.password === formState.password){
+      router.push('/admin/messages');
+      setFormState(initialState);
+    }else{
       return;
     }
   }
@@ -32,16 +54,16 @@ const Login = () => {
                 name='user' 
                 value={formState.user} 
                 onChange={handleChange}
-                required
               />
+              {formState.error.user ? <span style={{color: "red"}}>User field must not be empty</span> : '' }
               <input 
                 type="password" 
                 placeholder='Password' 
                 name='password' 
                 value={formState.password} 
                 onChange={handleChange}
-                required
               />
+              {formState.error.password ? <span style={{color: "red"}}>Password field must not be empty</span> : '' }
               <FormButton />
             </form>
           ): null
