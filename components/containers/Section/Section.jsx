@@ -1,6 +1,6 @@
 import React from "react";
 
-const Section = ({ children, isHero, background, id}) => {
+const Section = ({ children, isHero, id}) => {
   return (
     <section  className={`${isHero ? "sectionHero" : "section"}`} id={id}>
       {children}
@@ -8,14 +8,14 @@ const Section = ({ children, isHero, background, id}) => {
       <style jsx>{`
         .section {
           width: 100%;
-          background: ${background ? 'transparent' : 'whitesmoke'};
+          background: 'transparent' ;
         }
 
         .sectionHero {
           width: 100%;
           height: 100vh;
           position: relative;
-          background-image: url('/images/me2.jpg');
+          background-image: url('/images/hero.jpg');
           filter: brightness(90%);
           background-position: center;
           background-size: cover;

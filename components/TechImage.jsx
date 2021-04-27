@@ -8,6 +8,15 @@ const TechImage = () => {
   return ( 
     <div className='skills'>
       <h3 >SKILLS</h3>
+      <ul className='skills_ul'>
+        <li> <strong>+ Static Websites </strong></li>
+        <li> <strong>+ Responsive Design </strong></li>
+        <li> <strong>+ Web apps (Client Side and Server Side) </strong></li>
+        <li> <strong>+ Single Page Application (SPA) </strong></li>
+        <li> <strong>+ Performance </strong></li>
+        <li> <strong>+ Progressive Web App (PWA)  (in progress)</strong></li>
+        <li> <strong>+ Mobile Application with React Native  (in progress)</strong></li>
+      </ul>
       <div className='tech__container'>
       {
         state && state.map(item => (
@@ -33,6 +42,13 @@ const TechImage = () => {
           margin: 0 auto;
           padding-bottom: 2rem;
         }
+        .skills_ul{
+          display: flex;
+          justify-content: space-between;
+          margin: 2rem 0;
+          flex-wrap: wrap;
+          border: 1px solid white;
+        }
         .tech__container{
           display: flex;
           justify-content: space-between;
@@ -41,7 +57,6 @@ const TechImage = () => {
           font-size: 1.5rem;
           margin: 1rem 0;
           color: white;
-          text-align: center;
           letter-spacing: .5rem;
         }
         li{

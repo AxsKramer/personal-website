@@ -1,4 +1,3 @@
-import { white } from "colorette";
 import { useEffect } from "react";
 import Typed from 'typed.js';
 

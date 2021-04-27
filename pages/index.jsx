@@ -8,6 +8,7 @@ import Skills from "../components/Sections/Skills";
 import Contact from "../components/Sections/Contact";
 import {get} from "axios";
 import Spinner from '../components/Spinner';
+import Phrase from "../components/Sections/Phrase";
 
 const Projects = loadable(() => import('../components/Sections/Projects'), {
   fallback: <Spinner />
@@ -42,6 +43,7 @@ const App = ({ projects }) => {
       <About />
       <Skills />
       <Projects projects={projects} />
+      <Phrase />
       <Contact />
       <style global jsx>
         {`

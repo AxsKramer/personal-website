@@ -7,13 +7,15 @@ const Hero = () => {
   return ( 
     <Section isHero id='home'>
       <div className='hero'>
-        <h1 >Alexis Dueñas</h1>
-        <h2 >PORTFOLIO</h2>
+        <h1 >Hi!</h1>
+        <h2 >I am Alexis Dueñas</h2>
         <i className="fab fa-react" ></i> 
         <TypedWords strings={[
-          'Frontend',
-          'React',
-          'MERN Stack',
+          'Front-end',
+          'Back-end',
+          'React.js',
+          'Node.js',
+          'M.E.R.N. Stack',
         ]}
         />
         <Button>Go to projects</Button>
